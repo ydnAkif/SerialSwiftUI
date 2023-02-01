@@ -27,13 +27,12 @@ class ViewController: NSViewController {
 
         do {
             try serialPort.openPort()
-            //let res = try serialPort.writeString("40,40,40")
-            let readed1 = try serialPort.readLine()
-            let readed2 = try serialPort.readLine()
-            //print(res)
-            print(readed1)
-            temp1.stringValue = readed1
-            temp2.stringValue = readed2
+            
+            let data1 = try serialPort.readLine()
+            let data2 = try serialPort.readLine()
+
+            temp1.stringValue = data1
+            temp2.stringValue = data2
         } catch {
             print(error)
         }
